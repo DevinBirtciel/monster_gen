@@ -1,4 +1,6 @@
-public class Club {
+package weapons;
+
+public class Club implements SimpleMeleeWeapon {
 
     public String print(int toHit, int relevantModifier){
         int averageDamage = Utilities.calculateAverageDamage(1, 4, relevantModifier);
