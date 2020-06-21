@@ -6,7 +6,7 @@ public abstract class NPC {
     public int dexerityMod = (int)((dexerity - 10) / 2);
     public int wisdomMod = (int)((wisdom - 10) / 2);
     public int constitutionMod = (int)((constitution - 10) / 2);
-    public int level = 1;
+    public int crOrLevel = 1;
     public int hd = 8;
 
     
