@@ -4,7 +4,7 @@ import utilities.Utilities;
 
 public class PrintWeapon {
 
-  public static String printMeleeWeapon(Weapon weapon, int toHit, int relevantModifier){
+  public static String printWeaponDescription(Weapon weapon, int toHit, int relevantModifier){
 
     int averageDamage = Utilities.calculateAverageDamage(weapon.getNumberOfDamageDice(), weapon.getDamageDiceSize(), relevantModifier);
 
@@ -12,11 +12,11 @@ public class PrintWeapon {
 
     String reachAndRangeString;
     if(weapon.getTypeOfAttack() == TypeOfAttack.MELEE_WEAPON_ATTACK){
-      reachAndRangeString = "reach " + weapon.getReach() + " ft.,";
+      reachAndRangeString = "reach " + weapon.getReach() + " ft., ";
     } else if (weapon.getTypeOfAttack() == TypeOfAttack.RANGED_WEAPON_ATTACK) {
-      reachAndRangeString = "range " + weapon.getLowerRange() + "/" + weapon.getUpperRange() + " ft.,";
+      reachAndRangeString = "range " + weapon.getLowerRange() + "/" + weapon.getUpperRange() + " ft., ";
     } else {
-      reachAndRangeString = "reach " + weapon.getReach() + " ft. or range " + weapon.getLowerRange() + "/" + weapon.getUpperRange() + " ft.,";
+      reachAndRangeString = "reach " + weapon.getReach() + " ft. or range " + weapon.getLowerRange() + "/" + weapon.getUpperRange() + " ft., ";
     }
 
     String damageDiceString;
@@ -36,12 +36,12 @@ public class PrintWeapon {
     }
 
     return "<b>" + weapon.getName() + ".</b> "
-        + "<i>" + weapon.getTypeOfAttack() + ":</i> "
+        + "<i>" + weapon.getTypeOfAttack().getTypeOfAttack() + ":</i> "
         + toHitString
         + reachAndRangeString
         + targetsString
         + " <i>Hit:</i> " + averageDamage + " " + damageDiceString + " "
-        + weapon.getDamageType() + " damage.";
+        + weapon.getDamageType().getDamageType() + " damage.";
   }
 
 }
