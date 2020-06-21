@@ -1,3 +1,7 @@
+package utilities;
+
+import unorganized.AdvantageModifier;
+
 public class Utilities {
 
     public static int calculateAverageHp(int hitDice, int crOrLevel, int constitutionModifier){

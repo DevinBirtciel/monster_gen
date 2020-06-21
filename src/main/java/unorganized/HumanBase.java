@@ -1,5 +1,8 @@
+package unorganized;
+
 import java.util.ArrayList;
 import java.util.List;
+import utilities.Utilities;
 
 public class HumanBase extends NPC implements Humanoid, ANY_ALIGNMENT {
     public int walkingSpeed = 30;

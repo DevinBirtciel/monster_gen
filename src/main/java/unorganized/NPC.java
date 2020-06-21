@@ -1,3 +1,5 @@
+package unorganized;
+
 public abstract class NPC {
     public int strength, intelligence, charisma, dexerity, wisdom, constitution = 10;
     public int strengthMod = (int)((strength - 10) / 2);

@@ -1,4 +1,6 @@
-package weapons;
+package weapons.simple;
+
+import utilities.Utilities;
 
 public class Club implements SimpleMeleeWeapon {
 
