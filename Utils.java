@@ -1,7 +1,7 @@
 public class Utils {
 
-    public static int calculateAverageHp(int hd, int level, int constitutionModifier){
-        return (int)(((hd * level) + level + (constitutionModifier * level)) / 2);
+    public static int calculateAverageHp(int hitDice, int crOrLevel, int constitutionModifier){
+        return (int)(((hitDice * crOrLevel) + crOrLevel + (constitutionModifier * crOrLevel)) / 2);
     }
 
     public static int calculatePassivePerception(AdvantageModifier advantageModifier, int wisdomModifier){
@@ -14,18 +14,23 @@ public class Utils {
         return base;
     }
 
-    public static int determineProficiencyBonus(int level){
-        if(level < 5){
+    public static int calculateProficiencyBonus(int crOrLevel){  
+        int proficiencyBonus = (int) Math.ceil(crOrLevel/4) + 1;
+        if(proficiencyBonus < 2){
             return 2;
-        } else if (level < 9){
-            return 3;
-        } else if (level < 13){
-            return 4;
-        } else if (level < 17){
-            return 5;
-        } else {
-            return 6;
         }
+        return proficiencyBonus;
     }
-    
+
+    public static int calculateToHit(int relevantModifier) {
+        return relevantModifier;
+    }
+
+    public static int calculateProficientToHit(int relevantModifier, int crOrLevel){
+        return relevantModifier + calculateProficiencyBonus(crOrLevel);
+    }
+
+    public static int calculateAverageDamage(int numberOfDamageDice, int damageDiceSize, int relevantModifier){
+        return (int) ((numberOfDamageDice + (numberOfDamageDice * damageDiceSize) + relevantModifier)/2);
+    }
 }
