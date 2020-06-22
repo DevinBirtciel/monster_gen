@@ -10,5 +10,7 @@ public class Application {
     Club club = new Club();
     System.out.println(PrintWeapon.printWeaponDescription(dagger, 2, 0));
     System.out.println(PrintWeapon.printWeaponDescription(club, 2, 0));
+    NPC npc = new HumanBase();
+    System.out.println(PrintNpc.printNpcDescription(npc));
   }
 }

@@ -1,18 +1,22 @@
 package unorganized;
 
-import java.util.ArrayList;
 import java.util.List;
 import utilities.Utilities;
 
-public class HumanBase extends NPC implements Humanoid, ANY_ALIGNMENT {
-    public int walkingSpeed = 30;
-    public int hd = 8;
-    public int averageHp = Utilities.calculateAverageHp(hd, crOrLevel, constitutionMod);
-    public int armorClass = 10;
-    public Size size = Size.MEDIUM;
-    public List<String> languages = new ArrayList<String>();
+public class HumanBase extends NPC {
 
     public HumanBase() {
+        List<String> languages = getLanguages();
         languages.add("common");
-    }  
+        setLanguages(languages);
+
+        setRace(Race.HUMAN);
+        setSize(Size.MEDIUM);
+        setArmorClass(10);
+        setHd(8);
+        int averageHp = Utilities.calculateAverageHp(getHd(), getCrOrLevel(), getConstitutionMod());
+        setAverageHp(averageHp);
+        setWalkingSpeed(30);
+    }
+
 }
